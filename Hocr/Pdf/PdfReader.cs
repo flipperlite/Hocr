@@ -3,7 +3,7 @@ using Net.FairfieldTek.Hocr.ImageProcessors;
 
 namespace Net.FairfieldTek.Hocr.Pdf
 {
-    internal class PdfReader : IDisposable
+    public class PdfReader : IDisposable
     {
         private readonly int _dpi;
 

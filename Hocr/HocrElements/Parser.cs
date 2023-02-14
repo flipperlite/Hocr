@@ -7,7 +7,7 @@ using HtmlAgilityPack;
 
 namespace Net.FairfieldTek.Hocr.HocrElements
 {
-    internal class Parser
+    public class Parser
     {
         private readonly float _dpi;
         private HLine _currentLine;

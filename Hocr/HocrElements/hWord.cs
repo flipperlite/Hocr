@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Net.FairfieldTek.Hocr.HocrElements
 {
-    internal class HWord : HOcrClass
+    public class HWord : HOcrClass
     {
         public HWord() { Characters = new List<HChar>(); }
 

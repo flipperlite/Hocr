@@ -9,9 +9,9 @@ using ImageFormat = System.Drawing.Imaging.ImageFormat;
 
 namespace Net.FairfieldTek.Hocr
 {
-    internal class OcrController
+    public class OcrController
     {
-        internal void AddToDocument(string language, Image image, ref HDocument doc, string sessionName)
+        public void AddToDocument(string language, Image image, ref HDocument doc, string sessionName)
         {
             Bitmap b = ImageProcessor.GetAsBitmap(image, (int) Math.Ceiling(image.HorizontalResolution));
             string imageFile = TempData.Instance.CreateTempFile(sessionName, ".tif");

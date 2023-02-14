@@ -19,7 +19,7 @@ namespace Net.FairfieldTek.Hocr.Pdf
 
     public delegate Image ProcessImageForOcr(Image image);
 
-    internal class PdfCreator : IDisposable
+    public class PdfCreator : IDisposable
     {
         private readonly float _dpi;
         private readonly OcrController _ocrController;

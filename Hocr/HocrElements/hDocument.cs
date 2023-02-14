@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Net.FairfieldTek.Hocr.HocrElements
 {
-    internal class HDocument : HOcrClass
+    public class HDocument : HOcrClass
     {
         private readonly Parser _parser;
 

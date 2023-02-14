@@ -87,6 +87,13 @@ namespace Net.FairfieldTek.Hocr.Pdf
             }
         }
 
+        public string OcrExtract(string fileIn, string fileOut, PdfMeta metaData)
+        {
+            byte[] data = File.ReadAllBytes(fileIn);
+            string sessionName = TempData.Instance.CreateNewSession();
+            return CompressAndOcr(sessionName, fileIn, fileOut, metaData);
+        }
+
         public Tuple<byte[], string> CreateSearchablePdf(byte[] fileData, PdfMeta metaData)
         {
             try

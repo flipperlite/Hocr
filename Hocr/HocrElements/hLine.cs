@@ -6,7 +6,7 @@ namespace Net.FairfieldTek.Hocr.HocrElements
     /// <summary>
     ///     Represents one line of text in a paragraph.
     /// </summary>
-    internal class HLine : HOcrClass
+    public class HLine : HOcrClass
     {
         private readonly float _dpi;
 

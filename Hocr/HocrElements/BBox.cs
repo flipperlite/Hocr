@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Net.FairfieldTek.Hocr.HocrElements
 {
-    internal class BBox
+    public class BBox
     {
         private readonly float _dpi;
 

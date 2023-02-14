@@ -6,7 +6,7 @@ using Net.FairfieldTek.Hocr.Exceptions;
 
 namespace Net.FairfieldTek.Hocr.ImageProcessors
 {
-    internal class GhostScript
+    public class GhostScript
     {
         private readonly int _dpi;
         private readonly string _path;

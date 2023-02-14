@@ -1,6 +1,6 @@
 ﻿namespace Net.FairfieldTek.Hocr.HocrElements
 {
-    internal enum UnitFormat
+    public enum UnitFormat
     {
         Pixel,
         Point

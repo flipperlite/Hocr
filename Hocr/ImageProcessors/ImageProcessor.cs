@@ -8,7 +8,7 @@ using Net.FairfieldTek.Hocr.Exceptions;
 
 namespace Net.FairfieldTek.Hocr.ImageProcessors
 {
-    internal class ImageProcessor
+    public class ImageProcessor
     {
         public static Bitmap ConvertToBitonal(Bitmap original)
         {

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Net.FairfieldTek.Hocr.HocrElements
 {
-    internal class HPage : HOcrClass
+    public class HPage : HOcrClass
     {
         public HPage() { Paragraphs = new List<HParagraph>(); }
 
