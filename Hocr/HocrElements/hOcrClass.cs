@@ -36,8 +36,16 @@ namespace Net.FairfieldTek.Hocr.HocrElements
             str = Regex.Replace(str, "([A-Z])('?I'I')", m => m.Groups[1].Value + "TT");
             str = Regex.Replace(str, "([A-Z])('?I')", m => m.Groups[1].Value + "T");
 
-            // Special ASCII characters
+            // (LOUISA MAY) ALCO'IT
+            str = Regex.Replace(str, "([A-Z])('IT)", m => m.Groups[1].Value + "TT");
+
+            // SQUARE FEEl'
+            str = Regex.Replace(str, "([A-Z])('?l'l')", m => m.Groups[1].Value + "TT");
+            str = Regex.Replace(str, "([A-Z])('?l')", m => m.Groups[1].Value + "T");
+
+            // Special ASCII characters - fifth, flower
             str = str.Replace("ﬁ", "fi");
+            str = str.Replace("ﬂ", "fl");
             return str;
         }
 
