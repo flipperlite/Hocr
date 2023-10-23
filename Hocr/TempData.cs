@@ -22,7 +22,7 @@ namespace Net.FairfieldTek.Hocr
             }
             catch (Exception)
             {
-                throw new Exception("Cannot create Cache Folder");
+                throw new Exception($"Cannot create Cache Folder - {TemporaryFilePath}. Make sure the parent folder has the proper non-read only attribute, ownership and permissions.");
             }
         }
 
@@ -55,7 +55,9 @@ namespace Net.FairfieldTek.Hocr
 
             int counter = 0;
 
-            while (Directory.Exists(Path.Combine(TemporaryFilePath, newFolderName)))
+            string sessionFolder = Path.Combine(TemporaryFilePath, newFolderName);
+
+            while (Directory.Exists(sessionFolder))
             {
                 counter++;
                 newFolderName = originalName + "_" + counter;
@@ -63,14 +65,14 @@ namespace Net.FairfieldTek.Hocr
 
             try
             {
-                Directory.CreateDirectory(Path.Combine(TemporaryFilePath, newFolderName));
+                Directory.CreateDirectory(sessionFolder);
             }
             catch (Exception e)
             {
-                throw new Exception("Cannot Create Session Folder.");
+                throw new Exception($"Cannot Create Session Folder - {sessionFolder}. Make sure the parent folder has the proper non-read only attribute, ownership and permissions.");
             }
 
-            _caches.Add(sessionName, Path.Combine(TemporaryFilePath, newFolderName));
+            _caches.Add(sessionName, sessionFolder);
             return newFolderName;
         }
 
