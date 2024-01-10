@@ -67,7 +67,7 @@ namespace Net.FairfieldTek.Hocr
             {
                 Directory.CreateDirectory(sessionFolder);
             }
-            catch (Exception e)
+            catch
             {
                 throw new Exception($"Cannot Create Session Folder - {sessionFolder}. Make sure the parent folder has the proper non-read only attribute, ownership and permissions.");
             }

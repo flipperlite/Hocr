@@ -32,15 +32,10 @@ namespace Net.FairfieldTek.Hocr
             {
                 enginePath = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) ?? throw new InvalidOperationException(), "tessdata");
             }
-            catch (Exception e)
+            catch
             {
                 enginePath = Path.Combine(Environment.CurrentDirectory, "tessdata");
             }
-
-
-
-
-
 
             using (TesseractEngine engine = new TesseractEngine(enginePath, "eng"))
             {
