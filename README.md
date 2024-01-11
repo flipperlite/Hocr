@@ -10,6 +10,30 @@ Internally, Hocr uses Tesseract, GhostScript, iTextSharp and the HtmlAgilityPack
 
 This library IS THREADSAFE so you can process multiple PDF's at the same time in different threads, you do not need to process them one at a time.
 
+## Installation
+
+This project requires the GhostScript Windows x64 executable downloaded for free from here: https://ghostscript.com/releases/gsdnld.html
+
+The GhostScript executable is also required to be installed on all client computers that will run your program and it must be installed in the same path as you've put into your code. During install, keep note of installation directory and modify Program.cs to reflect its location "gswin64c.exe". For example:
+
+```C#
+PdfCompressorSettings _PdfSettings = new PdfCompressorSettings
+{
+    PdfCompatibilityLevel = PdfCompatibilityLevel.Acrobat_7_1_7,
+    WriteTextMode = WriteTextMode.Word,
+    Dpi = 400,
+    ImageType = PdfImageType.Tif,
+    ImageQuality = 100,
+    CompressFinalPdf = true,
+    DistillerMode = dPdfSettings.prepress,
+    DistillerOptions = string.Join(" ", _DistillerOptions.ToArray())
+};
+string _GhostScriptPath = @"C:\Program Files\gs\gs10.02.0\bin\gswin64c.exe";
+
+// In example code: private static PdfCompressor _comp;
+_comp = new PdfCompressor(_GhostScriptPath, _PdfSettings);
+```
+
 ## Use Hocr!
 
 Example Usage:
@@ -86,6 +110,7 @@ namespace Hocr.Cmd
                 DistillerOptions = string.Join(" ", distillerOptions.ToArray())
             };
 
+            // May need explicit location of GhostScript executable. See Installation instructions above.
             _comp = new PdfCompressor(pdfSettings);
             _comp.OnExceptionOccurred += Compressor_OnExceptionOccurred;
             _comp.OnCompressorEvent += _comp_OnCompressorEvent;
